@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "sort-gui"
+version = "0.1.0"
+description = ""
+authors = ["aFy4a <afy4a@vk.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pyqt6 = "^6.5.2"
+pyqt-tools = "^1.0.0"
+
+[tool.poetry.scripts]
+sort = "ui.entry:help"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+pytest-qt = "^4.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
