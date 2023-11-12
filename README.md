@@ -6,7 +6,7 @@
 Клонирование репозиторя;
 ```bash
 git clone https://github.com/aFy4a/sort_gui.git
-cd sort
+cd sort_gui
 poetry install
 ```
 
