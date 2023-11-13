@@ -4,7 +4,7 @@ from PyQt6.QtWidgets import (
     QLineEdit,
     QPushButton
 )
-from PyQt6.QtCore import pyqtSignal
+from PyQt6.QtCore import pyqtSignal, pyqtSlot
 from .action import sort
 
 class Button(QPushButton):
@@ -18,10 +18,9 @@ class Button(QPushButton):
         self.myclicked.emit(1)
 
 class Window(QWidget):
-    def __init__(self, app, *args, **kwargs):
+    exit_this = pyqtSignal(int)
+    def __init__(self, *args, **kwargs):
         QWidget.__init__(self, *args, **kwargs)
-        self.app = app
-
         container = QVBoxLayout(self)
 
         self.edit = QLineEdit()
@@ -33,11 +32,14 @@ class Window(QWidget):
         container.addWidget(self.result_button)
 
         self.exit_button = Button("Выйти")
-        self.exit_button.myclicked.connect(self.app.quit)
+        self.exit_button.myclicked.connect(self.active_exit)
         container.addWidget(self.exit_button)
 
         self.str = ''
 
+    @pyqtSlot()
+    def active_exit(self):
+        self.exit_this.emit(1)
     def active_myclicked(self):
         self.str = self.edit.text()
 
