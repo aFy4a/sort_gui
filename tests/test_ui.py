@@ -3,8 +3,7 @@ from ui.gui.application import Application, Window
 
 
 def test_first(qtbot):
-    app = Application([])
-    window = Window(app)
+    window = Window()
     qtbot.addWidget(window)
 
     window.edit.setText('1 2 3')
@@ -13,8 +12,7 @@ def test_first(qtbot):
     assert window.str == '1 2 3 '
 
 def test_second(qtbot):
-    app = Application([])
-    window = Window(app)
+    window = Window()
     qtbot.addWidget(window)
 
     window.edit.setText('1 2 3 56')
@@ -23,8 +21,7 @@ def test_second(qtbot):
     assert window.str == '1 2 3 '
 
 def test_third(qtbot):
-    app = Application([])
-    window = Window(app)
+    window = Window()
     qtbot.addWidget(window)
 
     window.edit.setText('')
