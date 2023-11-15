@@ -10,7 +10,7 @@ python = "^3.11"
 pyqt6 = "^6.5.2"
 
 [tool.poetry.scripts]
-sort = "ui.entry:help"
+sort = "sort_gui.entry:help"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.3"

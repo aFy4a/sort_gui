@@ -1,5 +1,5 @@
 from pytestqt.qt_compat import qt_api
-from ui.gui.application import Application, Window
+from sort_gui.gui.application import Application, Window
 
 
 def test_first(qtbot):

@@ -1,4 +1,4 @@
-from gui.application import Application
+from .gui.application import Application
 
 
 def help():
